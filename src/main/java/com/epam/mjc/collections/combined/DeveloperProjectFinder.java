@@ -1,5 +1,6 @@
 package com.epam.mjc.collections.combined;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -13,14 +14,14 @@ public class DeveloperProjectFinder {
                 list.add(entry.getKey());
             }
         }
-        developersProjects.sort(((o1, o2) -> {
+        list.sort(((o1, o2) -> {
             if (o1.length() == o2.length()) {
                 return o2.compareTo(o1);
             }
             return o1.length() < o2.length() ? 1 : -1;
         }));
 
-        return developersProjects;
+        return list;
     }
 }
-}
+
